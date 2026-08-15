@@ -1,0 +1,15 @@
+cron:
+  wrap_response: false
+  mirror_delivery: true
+  model_drift_guard: false
+tool_loop_guardrails:
+  hard_stop_enabled: true
+  hard_stop_after:
+    exact_failure: 5
+    idempotent_no_progress: 5
+agent:
+  max_turns: 40
+  reasoning_effort: low
+memory:
+  memory_enabled: true
+  user_profile_enabled: true

@@ -1,0 +1,28 @@
+# Écrit par le bot (PUT /tenant). Ne pas commiter un vrai fichier.
+timezone: Europe/Paris
+odoo:
+  url: https://acme.odoo.com
+  db: acme
+  username: api@acme.test
+  api_key: "…"
+  defaults:
+    user_id: 2
+    team_id: 1
+    stage_id: 1
+    project_id: 1
+    activity_type_call: 4
+    activity_type_todo: 5
+    email_from: commercial@acme.test
+ringover:
+  api_key: "…"
+  base_url: https://public-api.ringover.com/v2
+imap:
+  host: imap.gmail.com
+  port: 993
+  username: commercial@acme.test
+  password: "mot-de-passe-application"
+  folder: INBOX
+  use_ssl: true
+poll:
+  interval_seconds: 180
+  lookback_hours: 48

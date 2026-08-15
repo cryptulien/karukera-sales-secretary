@@ -1,0 +1,63 @@
+name: sales-secretary
+
+services:
+  ingest:
+    build: .
+    image: sales-secretary:local
+    container_name: secretary-ingest
+    restart: unless-stopped
+    environment:
+      SECRETARY_DATA: /data
+      SECRETARY_TOKEN: ${SECRETARY_TOKEN}
+      SECRETARY_PORT: "8080"
+    volumes:
+      - secretary-data:/data
+    networks:
+      - secretary
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/healthz')"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  seed:
+    image: busybox:1.37
+    container_name: secretary-seed
+    volumes:
+      - hermes-data:/opt/data
+      - ./pack/hermes:/seed:ro
+    command: ["sh", "/seed/seed.sh"]
+    restart: "no"
+
+  hermes:
+    image: ${HERMES_IMAGE:-nousresearch/hermes-agent:latest}
+    container_name: secretary-hermes
+    restart: unless-stopped
+    depends_on:
+      ingest:
+        condition: service_healthy
+      seed:
+        condition: service_completed_successfully
+    command: gateway run
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_ALLOWED_USERS: ${TELEGRAM_ALLOWED_USERS:-}
+      SECRETARY_TOKEN: ${SECRETARY_TOKEN}
+      SECRETARY_URL: http://ingest:8080
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      XAI_API_KEY: ${XAI_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      HERMES_DASHBOARD: ${HERMES_DASHBOARD:-0}
+    volumes:
+      - hermes-data:/opt/data
+    networks:
+      - secretary
+
+volumes:
+  secretary-data:
+  hermes-data:
+
+networks:
+  secretary:
+    driver: bridge

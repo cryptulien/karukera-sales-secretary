@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+"""Appels l'API ingest depuis Hermes. Usage: sec GET /status | sec POST /poll"""
+from __future__ import annotations
+
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+
+BASE = os.environ.get("SECRETARY_URL", "http://ingest:8080").rstrip("/")
+TOKEN = os.environ.get("SECRETARY_TOKEN", "").strip()
+
+
+def main() -> int:
+    if len(sys.argv) < 3:
+        print("usage: sec GET|POST|PUT <path> [json-body]", file=sys.stderr)
+        return 2
+    method, path = sys.argv[1].upper(), sys.argv[2]
+    body = None
+    if len(sys.argv) > 3:
+        body = sys.argv[3].encode()
+    elif method in {"POST", "PUT"} and not sys.stdin.isatty():
+        body = sys.stdin.read().encode()
+    req = urllib.request.Request(
+        BASE + path,
+        data=body,
+        method=method,
+        headers={"Accept": "application/json"},
+    )
+    if body is not None:
+        req.add_header("Content-Type", "application/json")
+    if TOKEN:
+        req.add_header("Authorization", f"Bearer {TOKEN}")
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            sys.stdout.write(resp.read().decode())
+            if not resp.headers.get("Content-Type", "").startswith("application/json"):
+                sys.stdout.write("\n")
+            return 0
+    except urllib.error.HTTPError as exc:
+        sys.stderr.write(exc.read().decode() or str(exc))
+        sys.stderr.write("\n")
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
