@@ -1,10 +1,14 @@
-# Secrétaire commercial
+# QuickTalk / Sales Secretary
 
-Appliance **plug-and-play** : Hermes lit les **mails** et les **appels Quicktalk / Ringover**, propose une carte dans **Telegram**, et au `ok` met à jour **Odoo** (contact, opportunité, activité, tâche, brouillon de mail).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-Rien n'écrit dans Odoo avant ton `ok`. Le brouillon de mail est une **note** sur le lead — Odoo n'envoie rien.
+**Open-source** plug-and-play sales ops appliance: Hermes reads **email** and **QuickTalk / Ringover** calls, proposes a card in **Telegram**, and on your `ok` updates **Odoo** (contact, opportunity, activity, task, email draft note).
 
-Hors stack SuperPagr.
+Nothing writes to Odoo before your `ok`. The email draft is a **note** on the lead — Odoo does not send mail by itself.
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) and [SECURITY.md](./SECURITY.md).
+
+> Formerly a paid Karukera kit. Now MIT — clone and self-host.
 
 ## Setup de A à Z (deux phases, figées)
 
