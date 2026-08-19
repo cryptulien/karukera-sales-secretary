@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-labelledby="t">
+  <title id="t">QuickTalk Automation workflow</title>
+  <rect width="1400" height="620" fill="#F4F3EF"/>
+  <text x="48" y="52" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#121212">How it works</text>
+  <text x="48" y="82" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#5C5954">Nothing writes to Odoo before a human ok. Email draft is a note — Odoo does not send mail.</text>
+
+  <g font-family="DejaVu Sans, Helvetica, Arial, sans-serif">
+    <rect x="36" y="140" width="188" height="88" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="130" y="176" text-anchor="middle" font-size="14" fill="#121212">IMAP email</text>
+    <text x="130" y="198" text-anchor="middle" font-size="12" fill="#5C5954">app password</text>
+
+    <rect x="36" y="248" width="188" height="88" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="130" y="284" text-anchor="middle" font-size="14" fill="#121212">QuickTalk /</text>
+    <text x="130" y="306" text-anchor="middle" font-size="14" fill="#121212">Ringover</text>
+
+    <path d="M224 184 H248" stroke="#4A4742" stroke-width="1.6"/>
+    <path d="M224 292 H248" stroke="#4A4742" stroke-width="1.6"/>
+    <path d="M248 184 V292" stroke="#4A4742" stroke-width="1.6"/>
+    <path d="M248 238 H268" stroke="#4A4742" stroke-width="1.6"/>
+    <polygon points="268,232 280,238 268,244" fill="#4A4742"/>
+
+    <rect x="284" y="194" width="188" height="88" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="378" y="230" text-anchor="middle" font-size="14" fill="#121212">Ingest poller</text>
+    <text x="378" y="252" text-anchor="middle" font-size="12" fill="#5C5954">ledger · no LLM</text>
+    <path d="M472 238 H492" stroke="#4A4742" stroke-width="1.6"/>
+    <polygon points="492,232 504,238 492,244" fill="#4A4742"/>
+
+    <rect x="508" y="194" width="188" height="88" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="602" y="230" text-anchor="middle" font-size="14" fill="#121212">Hermes</text>
+    <text x="602" y="252" text-anchor="middle" font-size="12" fill="#5C5954">judge + draft card</text>
+    <path d="M696 238 H716" stroke="#4A4742" stroke-width="1.6"/>
+    <polygon points="716,232 728,238 716,244" fill="#4A4742"/>
+
+    <rect x="732" y="194" width="188" height="88" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="826" y="230" text-anchor="middle" font-size="14" fill="#121212">Telegram card</text>
+    <text x="826" y="252" text-anchor="middle" font-size="12" fill="#5C5954">summary + proposal</text>
+    <path d="M920 238 H940" stroke="#4A4742" stroke-width="1.6"/>
+    <polygon points="940,232 952,238 940,244" fill="#4A4742"/>
+
+    <polygon points="1048,194 1156,238 1048,282 940,238" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="1048" y="234" text-anchor="middle" font-size="14" fill="#121212">Human</text>
+    <text x="1048" y="254" text-anchor="middle" font-size="12" fill="#5C5954">ok / ignore / edit</text>
+    <path d="M1156 238 H1176" stroke="#4A4742" stroke-width="1.6"/>
+    <polygon points="1176,232 1188,238 1176,244" fill="#4A4742"/>
+
+    <rect x="1192" y="194" width="172" height="88" rx="12" fill="#fff" stroke="#121212" stroke-width="1.4"/>
+    <text x="1278" y="230" text-anchor="middle" font-size="14" fill="#121212">Odoo</text>
+    <text x="1278" y="252" text-anchor="middle" font-size="12" fill="#5C5954">after ok only</text>
+  </g>
+
+  <rect x="36" y="380" width="1328" height="176" rx="16" fill="#fff" stroke="#121212" stroke-opacity="0.08"/>
+  <text x="60" y="420" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#121212">On apply (ok)</text>
+  <text x="60" y="452" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#4A4742">Contact · opportunity · activity · project task · chatter note « email draft — not sent ».</text>
+  <text x="60" y="480" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#4A4742">Idempotent on (source, external_id). A second apply reuses odoo_ids.</text>
+  <text x="60" y="508" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#4A4742">Business secrets live in tenant.yaml on the ingest volume — Hermes never holds them.</text>
+  <text x="60" y="536" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#5C5954">Source: draw.superpagr.com · pages/open-source/quicktalk-automation</text>
+</svg>

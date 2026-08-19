@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">QuickTalk Automation</title>
+  <desc id="desc">Email and calls become a Telegram card. Odoo updates only after human ok. MIT.</desc>
+  <rect width="960" height="540" fill="#F4F3EF"/>
+  <rect x="48" y="36" width="864" height="468" rx="24" fill="#ffffff" stroke="#121212" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="48" y="36" width="8" height="468" rx="0" fill="#121212"/>
+  <text x="88" y="92" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="14" fill="#5C5954">Open source · self-hosted sales ops</text>
+  <text x="88" y="142" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="36" font-weight="700" fill="#121212">QuickTalk Automation</text>
+  <text x="88" y="182" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="18" fill="#4A4742">Mail + calls become a Telegram card. Odoo writes only after your ok.</text>
+  <g fill="#121212" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="17">
+    <circle cx="96" cy="236" r="3" fill="#121212"/>
+    <text x="112" y="242">IMAP email + QuickTalk / Ringover ingest</text>
+    <circle cx="96" cy="272" r="3" fill="#121212"/>
+    <text x="112" y="278">Hermes proposes the card on Telegram</text>
+    <circle cx="96" cy="308" r="3" fill="#121212"/>
+    <text x="112" y="314">Human ok / ignore / edit — nothing writes before ok</text>
+    <circle cx="96" cy="344" r="3" fill="#121212"/>
+    <text x="112" y="350">Odoo contact, opportunity, activity, task, email draft note</text>
+  </g>
+  <rect x="88" y="392" width="64" height="28" rx="14" fill="none" stroke="#5C5954" stroke-width="1.2"/>
+  <text x="120" y="411" text-anchor="middle" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="12" fill="#5C5954">MIT</text>
+  <text x="168" y="411" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="15" fill="#4A4742">github.com/cryptulien/quicktalk-automation</text>
+  <text x="88" y="462" font-family="DejaVu Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#5C5954">Phase 1: VPS · Phase 2: Telegram onboard wizard</text>
+</svg>
